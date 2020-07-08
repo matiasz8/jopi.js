@@ -33,6 +33,6 @@ jobs:
         run: yarn jest --coverage
 
       - name: publicar a npm
-        run: npm publish
+        run: npm token
         env:
           NODE_AUTH_TOKEN: 66177afd-25d9-47d4-baf4-9f6376f00342
