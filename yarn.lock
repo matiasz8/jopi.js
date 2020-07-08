@@ -2433,6 +2433,23 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@oneloop/box@^1.2.46":
+  version "1.2.46"
+  resolved "https://registry.yarnpkg.com/@oneloop/box/-/box-1.2.46.tgz#c5bb8e58c2503a42005a13424dd0ca1f8b5cd6ba"
+  integrity sha512-+P3oqZLli4/W5sGmWV8zdHHfPrLiHVcL4GNazjqY1ZHrj88ErLQBC6GWFw8XnxMncApafswov6e1o8D/QapFJA==
+  dependencies:
+    "@styled-system/css" "^5.1.4"
+    styled-components "5.1.1"
+    styled-system "5.1.5"
+
+"@oneloop/drawer@^1.0.2":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@oneloop/drawer/-/drawer-1.0.3.tgz#117ee8a8e97ee5197142cdab82a312d6961614a2"
+  integrity sha512-WcrApZkNLIAmK714yftcI32HOngMwhZwPiLJxZ6rrZ7762rNrq6zmpcpMOLLsqxHRDApxqWHaCtw12QVrl2K+w==
+  dependencies:
+    "@oneloop/box" "^1.2.46"
+    framer-motion "1.11.1"
+
 "@popmotion/easing@^1.0.1", "@popmotion/easing@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@popmotion/easing/-/easing-1.0.2.tgz#17d925c45b4bf44189e5a38038d149df42d8c0b4"
