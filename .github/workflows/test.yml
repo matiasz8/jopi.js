@@ -19,7 +19,7 @@ jobs:
         run: |
           # npm install
           npm install -g npm-cli-login
-          echo ${{ secrets.NPM_PASSWORD }}
+          echo '${{ secrets.NPM_PASSWORD }}'
           # npm install --global lerna
           # yarn install
 
