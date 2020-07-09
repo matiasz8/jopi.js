@@ -23,7 +23,6 @@ jobs:
       - name: Loguearse
         run: |
           # npm-cli-login -u ${{ secrets.NPM_USER_NAME }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
-          npm-cli-login -u bsabatino -p navent..1234 -e bsabatino@navent.com
-
-      - name: Listar tokens
-        run: npm token
+          npm-cli-login -u bsabatino -p navent..1234 -e bsabatino@navent.com ; npm token
+      # - name: Listar tokens
+      #   run: npm token
