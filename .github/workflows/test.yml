@@ -14,25 +14,24 @@ jobs:
         with:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
-      - name: npm install
-        run: npm install
+          scope: '@nquiroga'
 
-      - name: lerna install
-        run: npm install --global lerna
+      - name: Installing Npn & Lerna & Yarn
+        run: |
+          npm install
+          npm install --global lerna
+          # yarn install
 
-      - name: iniciar lerna
-        run: lerna init
+      # - name: Iniciando Lerna
+      #   run: lerna init
 
-      - name: instala yarn
-        run: yarn install
+      #   - name: run yarn test
+      #     run: yarn test
 
-      - name: run yarn test
-        run: yarn test
+      #   - name: yarn Jest
+      #     run: yarn jest --coverage
 
-      - name: yarn Jest
-        run: yarn jest --coverage
-
-      - name: publicar a npm
+      - name: Listar tokens
         run: npm token
         env:
           NODE_AUTH_TOKEN: 66177afd-25d9-47d4-baf4-9f6376f00342
