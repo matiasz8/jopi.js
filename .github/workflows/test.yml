@@ -14,12 +14,12 @@ jobs:
         with:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
-          scope: '@nquiroga'
 
       - name: Installing Npn & Lerna & Yarn
         run: |
-          npm install
+          # npm install
           npm install -g npm-cli-login
+          echo ${{ secrets.NPM_PASS }}
           # npm install --global lerna
           # yarn install
 
