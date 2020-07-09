@@ -1,4 +1,4 @@
-on: [push]
+on: [pull_request]
 
 jobs:
   runTest:
@@ -17,10 +17,22 @@ jobs:
 
       - name: Installing Npn & Lerna & Yarn
         run: |
-          npm install
+          # npm install
           npm install -g npm-cli-login
+          echo '${{ secrets.NPM_PASSWORD }}'
+          # npm install --global lerna
+          # yarn install
+
+      # - name: Iniciando Lerna
+      #   run: lerna init
+
+      #   - name: run yarn test
+      #     run: yarn test
+
+      #   - name: yarn Jest
+      #     run: yarn jest --coverage
 
       - name: Listar tokens
         run: |
-          npm-cli-login -u ${{ secrets.NPM_USER_NAME }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
+          npm-cli-login -u ${{ secrets.NPM_USER }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
           npm token
