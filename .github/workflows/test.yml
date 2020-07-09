@@ -19,7 +19,8 @@ jobs:
       - name: Installing Npn & Lerna & Yarn
         run: |
           npm install
-          npm install --global lerna
+          npm install -g npm-cli-login
+          # npm install --global lerna
           # yarn install
 
       # - name: Iniciando Lerna
@@ -32,6 +33,6 @@ jobs:
       #     run: yarn jest --coverage
 
       - name: Listar tokens
-        run: npm token
-        env:
-          NODE_AUTH_TOKEN: 66177afd-25d9-47d4-baf4-9f6376f00342
+        run: |
+          npm-cli-login -u ${{ secrets.NPM_USER }} -p '${{ secrets.NPM_PASS }}' -e ${{ secrets.NPM_EMAIL }}
+          npm token
