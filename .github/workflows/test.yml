@@ -34,5 +34,5 @@ jobs:
 
       - name: Listar tokens
         run: |
-          npm-cli-login -u ${{ secrets.NPM_USER }} -p '${{ secrets.NPM_PASS }}' -e ${{ secrets.NPM_EMAIL }}
+          npm-cli-login -u ${{ secrets.NPM_USER }} -p \'${{ secrets.NPM_PASS }}\' -e ${{ secrets.NPM_EMAIL }}
           npm token
