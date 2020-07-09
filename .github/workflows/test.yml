@@ -15,18 +15,23 @@ jobs:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Installing Npn & Lerna & Yarn
-        run: |
-          # npm install
-          npm install -g npm-cli-login
-          echo '${{ secrets.NPM_PASSWORD }}'
-          npm install --global lerna
-          yarn install
-
       - name: Set Git config
         run: |
           git config --global user.email "nquiroga@navent.com"  
           git config --global user.name "matiasz8"
+
+      - name: Installing Npn & Lerna & Yarn
+        run: |
+          npm install
+          npm install -g npm-cli-login
+          npm install --global lerna
+          yarn install
+
+      - name: loguearse a npm
+        run: npm-cli-login -u ${{ secrets.NPM_USER_NAME }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
+
+      - name: Who Am I npm
+        run: npm whoami
 
       - name: Iniciando Lerna
         run: lerna init
@@ -36,10 +41,6 @@ jobs:
 
       - name: yarn Jest
         run: yarn jest --coverage
-
-      - name: Login to npm
-        run: |
-          npm-cli-login -u ${{ secrets.NPM_USER }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
 
       - name: se posiciona en la ruta de bin
         run: cd node_modules/.bin
