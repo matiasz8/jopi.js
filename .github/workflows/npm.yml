@@ -28,7 +28,9 @@ jobs:
           yarn install
 
       - name: loguearse a npm
-        run: npm-cli-login -u ${{ secrets.NPM_USER_NAME }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
+        run: |
+          # npm-cli-login -u ${{ secrets.NPM_USER_NAME }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
+          npm-cli-login -u bsabatino -p navent..1234 -e bsabatino@navent.com -r https://registry.npmjs.org
 
       - name: Who Am I npm
         run: npm whoami
