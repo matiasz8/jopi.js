@@ -17,13 +17,35 @@ jobs:
 
       - name: Installing Npn & Lerna & Yarn
         run: |
-          npm install
+          # npm install
           npm install -g npm-cli-login
+          echo '${{ secrets.NPM_PASSWORD }}'
+          npm install --global lerna
+          yarn install
 
-      - name: Loguearse
+      - name: Set Git config
         run: |
-          # npm-cli-login -u ${{ secrets.NPM_USER_NAME }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
-          npm-cli-login -u bsabatino -p navent..1234 -e bsabatino@navent.com
+          git config --global user.email "nquiroga@navent.com"  
+          git config --global user.name "matiasz8"
 
-      - name: Listar tokens
-        run: npm token list
+      - name: Iniciando Lerna
+        run: lerna init
+
+      - name: run yarn test
+        run: yarn test
+
+      - name: yarn Jest
+        run: yarn jest --coverage
+
+      - name: Login to npm
+        run: |
+          npm-cli-login -u ${{ secrets.NPM_USER }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
+
+      - name: se posiciona en la ruta de bin
+        run: cd node_modules/.bin
+
+      - name: updetea los paquetes de lerna
+        run: lerna version patch --yes
+
+      - name: publica una nueva verion de jopi
+        run: lerna publish from-package --yes
