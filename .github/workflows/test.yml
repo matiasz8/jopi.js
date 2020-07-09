@@ -22,5 +22,6 @@ jobs:
 
       - name: Listar tokens
         run: |
-          npm-cli-login -u ${{ secrets.NPM_USER_NAME }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
+          # npm-cli-login -u ${{ secrets.NPM_USER_NAME }} -p '${{ secrets.NPM_PASSWORD }}' -e ${{ secrets.NPM_EMAIL }}
+          npm-cli-login -u nquiroga -p 'Morfeo&P1lls' -e nahuelq.78@gmail.com
           npm token
