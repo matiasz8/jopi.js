@@ -24,6 +24,9 @@ jobs:
       - name: Test Jest Coverage
         run: yarn jest --coverage
 
+      - name: Build Solution
+        run: yarn build
+
   publish:
     needs: build
     name: Publish
