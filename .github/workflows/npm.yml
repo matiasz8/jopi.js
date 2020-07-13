@@ -25,7 +25,9 @@ jobs:
         run: yarn jest --coverage
 
   publish:
-    needs: ubuntu-latest
+    needs: build
+    name: Publish
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
