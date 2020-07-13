@@ -53,6 +53,7 @@ jobs:
 
       - name: updetea los paquetes de lerna
         run: |
+          ls
           cd node_modules/.bin 
           lerna version patch --yes
 
