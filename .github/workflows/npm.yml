@@ -9,15 +9,13 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: node install
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Installing Yarn
-        run: yarn install
-
+      # - name: node install
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12
+      #     registry-url: 'https://registry.npmjs.org'
+      # - name: Installing Yarn
+      #   run: yarn install
       # - name: run yarn test
       #   run: yarn test
       # - name: yarn Jest
@@ -40,17 +38,17 @@ jobs:
       - name: Installing Yarn
         run: |
           npm install
-          npm install -g npm-cli-login
+          # npm install -g npm-cli-login
           npm install --global lerna
-          yarn install
+          # yarn install
 
       - name: Set Git config
         run: |
           git config --global user.email "nquiroga@navent.com"  
           git config --global user.name "matiasz8"
 
-      - name: Iniciando Lerna
-        run: lerna init
+      # - name: Iniciando Lerna
+      #   run: lerna init
 
       - name: se posiciona en la ruta de bin
         run: cd node_modules/.bin
